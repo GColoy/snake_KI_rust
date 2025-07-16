@@ -5,4 +5,5 @@ edition = "2024"
 
 [dependencies]
 ggez = "0.9.3"
+once_cell = "1.21.3"
 rand = "0.9.1"

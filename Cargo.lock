@@ -2212,6 +2212,7 @@ name = "snake_KI_rust"
 version = "0.1.0"
 dependencies = [
  "ggez",
+ "once_cell",
  "rand",
 ]
 

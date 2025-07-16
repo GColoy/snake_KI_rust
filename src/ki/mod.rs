@@ -1,3 +1,5 @@
+use std::collections::VecDeque;
+
 use crate::MainState;
 use crate::game_logic::snake::Direction;
 
@@ -33,4 +35,18 @@ fn get_closest_apple(state: &MainState) -> Option<(isize, isize)> {
 
 fn manhattan_distance(start: (isize, isize), position: (isize, isize)) -> isize {
     return (start.0 - position.0).abs() + (start.1 - position.1).abs();
+}
+
+pub fn get_straights(path: &VecDeque<(isize, isize)>) -> Vec<(isize, isize)> {
+    let mut straights = Vec::new();
+    straights.push(path[0]);
+    for i in 1..path.len() - 1 {
+        if path[i].0 == path[i - 1].0 || path[i].1 == path[i - 1].1 {
+            continue;
+        } else {
+            straights.push(path[i - 1]);
+        }
+    }
+    straights.push(*path.back().unwrap());
+    straights
 }

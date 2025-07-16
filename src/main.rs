@@ -4,6 +4,7 @@ mod game_options;
 mod main_state;
 mod controls;
 mod ki;
+mod debug_helper;
 
 use ggez::event;
 use ggez::GameResult;
